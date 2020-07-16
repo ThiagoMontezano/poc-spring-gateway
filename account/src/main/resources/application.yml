@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: account
+  data:
+    mongodb:
+      database: account
+      uri: mongodb://localhost:27017/account
+
+management:
+  server:
+    address: 0.0.0.0
+  security:
+    enabled: false
+  endpoint:
+    health:
+      show-details: always
+    web:
+      exposure:
+        include: info, health, mappings

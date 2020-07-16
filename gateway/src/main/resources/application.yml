@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: _customer_route
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/customers/**
+          filters:
+            - RewritePath=/api/customers, /customers
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
